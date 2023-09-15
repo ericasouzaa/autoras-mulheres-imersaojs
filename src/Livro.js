@@ -10,8 +10,5 @@ class Livro {
       this.sinopse = sinopse;
     }
   }
-  
-  
-
   module.exports = { Livro };
  

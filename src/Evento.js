@@ -25,10 +25,8 @@ class Evento {
     return this.#link;
   }
   set linkEvento(link) {
-    this.link = link;
-  }
-
-  }
+    this.#link = link;
+  }}
 
  
 

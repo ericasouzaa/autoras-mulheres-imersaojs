@@ -25,9 +25,7 @@ class Avaliacao {
 
     listarAvaliacoes() {
         return this.avaliacoes;
-    }
-
-}
+    }}
 
 
     module.exports = { Avaliacao };

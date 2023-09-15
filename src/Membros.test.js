@@ -1,19 +1,26 @@
-const { Members } = require("./Membros");
+const { Membros } = require("./Membros");
 
-test('Deve inicializar um membro corretamente', () => {
-    const member = new Members('Nome', 'Biografia', 'email@reprograma.com', 'Cidade')
-    expect(member.nome).toBe('Nome');
-    expect(member.biografia).toBe('Biografia');
-    expect(member.email).toBe('email@reprograma.com');
-    expect(member.cidade).toBe('Cidade');
-    expect(member.favoritos).toEqual([]);
+describe('Membros', () => {
+  let membro
+
+  beforeEach(() => {
+    membro = new Membros('Bia', 'Biografia', 'bia@example.com', 'Salvador');
+});
+  it('Deve criar um membro com os valores corretos', () => {
+      expect(membro.nome).toBe('Bia');
+      expect(membro.biografia).toBe('Biografia');
+      expect(membro.email).toBe('bia@example.com');
+      expect(membro.cidade).toBe('Salvador');
+      expect(membro.favoritos).toEqual([]);
   });
 
-  test('Deve adicionar um favorito à lista', () => {
-    const member = new Members('Nome', 'Biografia', 'email@example.com', 'Cidade');
-    const favorito = 'Item favorito';
-    member.favoritos.push(favorito);
-    expect(member.favoritos).toContain(favorito);
+  it('Deve adicionar um livro favorito corretamente', () => {
+      membro.adicionarLivroFavorito('Hibisco Roxo');
+      expect(membro.favoritos).toEqual(['Hibisco Roxo']);
   });
 
-  //revisar teste favoritos
+  it('Deve atualizar a biografia corretamente', () => {
+      membro.setBiografia('Biografia Nova');
+      expect(membro.biografia).toBe('Biografia Nova');
+  });
+});

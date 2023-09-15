@@ -32,7 +32,6 @@ console.log(`Hora: ${evento1.hora}`)
 console.log(`Discussões: ${evento1.discussoes.join(", ")}`);
 console.log("\n");
 
-
 //Criar membros novos
 const membro1 = new Membros("Alice","Feita de sal e sol", "alice@rep.com", "Recife");
 const membro2 = new Membros("Beatriz", "Só se vive uma vez", "bia@rep.com", "Rio de Janeiro");
